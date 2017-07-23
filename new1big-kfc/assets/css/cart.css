@@ -1,0 +1,111 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+        background-color: #f7f7f7;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+#header{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    background-color: white;
+}
+#header .logo2{
+    width: 100%;
+    
+}
+#header .logo2 img{
+    width: 50%;
+        margin-top: -10px;
+}
+
+#header .logo2 span{
+        text-transform: capitalize;
+    color: red;
+    font-weight: 900;
+    font-size: 31px;
+    margin-left: -40px;
+}
+#header .logout_btn2 a{
+   color: white;
+    text-transform: capitalize;
+    background-color: 	rgb(255,69,0);
+    padding: 5px 13px;
+    border-radius: 6px; 
+    text-decoration: none;
+}
+#header .logout_btn2{
+    margin-top: 20px
+}
+#content{
+    margin-top: 100px;
+    background-color: #f7f7f7;
+}
+#content .myproducts li{
+    position: relative;
+    list-style: none;
+    margin: 20px 0px;
+        border: 1px solid lightgrey;
+    padding: 10px 10px;
+        background: white;
+    border-radius: 10px;
+}
+#content .myproducts li .product .productimage{
+    width: 20%;
+}
+#content .myproducts li .product .productimage img{
+    width: 100%;
+}
+#content .myproducts li .product{
+    display: flex;
+}
+#content .myproducts li .product button{
+       border-radius: 10px;
+    border: none;
+    /* padding: 5px; */
+    font-size: 20px;
+    /* border: 1px solid lightgrey; */ 
+}
+#content .myproducts ul{
+   margin-left: 50px;
+}
+#content .myproducts li .product button:focus{
+outline: none;
+    
+}
+#content .myproducts li .product .deleteimage{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+#content .myproducts li .productdescription{
+    margin-left: 20px;
+}
+#content .form{
+        margin-top: 50px;
+}
+#content .form input[type="submit"]{
+    border-radius: 5px;
+    border: none;
+    border: 1px solid lightgrey;
+    padding: 5px 10px;
+}
+#content .amount{
+    margin-right: 50px;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 19px;
+}
+#content .empty{
+    text-transform: capitalize;
+    color: red;
+    text-align: center;
+    
+}

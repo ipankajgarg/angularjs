@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="assets/css/cart.css">
+    
+    
+    <script src="libs/angular.min.js"></script>
+    
+    <script src="cartjs/cartmodule.js"></script>
+  
+    <script src="cartjs/cartfactory.js"></script>
+   
+    <script src="cartjs/cartcontroller.js"></script>
+</head>
+<body ng-app="cartapp" ng-controller="cartctrl">
+ <div id="container">
+     <header id="header">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-3">
+                       <div class="logo2">
+                           <img src="images/logo.png" alt="image" >
+                           <span>halanx</span>
+                           
+                       </div>
+                       
+                   </div>
+<!--
+                  
+-->
+                       <div class="col-lg-1 offset-lg-8">
+                           <div class="logout_btn2">
+                               <a href="">logout</a>
+                           </div>
+                       </div>
+
+               </div>
+           </div>
+       </header>
+       <div id="content">
+          
+           <div class="container-fluid" style="padding : 0px">
+              <div class="row" ng-hide="cartclass">
+                  <div class="col-sm-5">
+                      <div class="myproducts">
+                           <ul>
+        <li ng-repeat="list in cartproductlist track by $index">
+           <div class="product">
+           <div class="productimage">
+            <img ng-src="{{list.ProductImage}}">
+            </div>
+            <div class="productdescription">
+                <span>{{list.ProductName}}</span>
+                <br>
+                <span><i class="fa fa-inr" aria-hidden="true"></i>{{list.Price}}</span>
+                 <br>
+                  <button ng-click="updateminus(list)" ng-disabled="list.quantity==1" >-</button>
+            <input type="text" ng-model="list.quantity"   min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <button ng-click="updateplus(list)"  ng-model="hello">+</button>
+            </div>
+          <div class="deleteimage">
+            <img src="images/close-icon.png" ng-click="deleteproduct(list)" >
+            </div>
+            </div>
+        </li>
+        
+    </ul> 
+                      </div>
+                  </div>
+                  <div class="col-sm-3 offset-sm-4">
+                    <div class="amount">
+                   
+        <h1>Your Amount</h1>
+<!--
+        <ul>
+            <li ng-repeat="i in cartproductlist">
+             <span>{{i.ProductName}}</span>
+              <span>{{i.Price}}*{{i.count}}</span>  
+            </li>
+        </ul>
+-->
+        <span>total amount::{{totalamount}}</span>
+      <div class="form">
+                          <form  method="post" ng-submit="submitcart()" >
+                              <input type="submit" value="continue" >
+                          </form>
+                      </div>
+        
+    </div>  
+                  </div>
+              </div>
+              <div class="row empty" ng-hide="emptyclass">
+                  <div class="col-sm-12">
+                      <h1>your shopping bag is empty</h1>
+                      <img src="images/shopping-cart-2(shopping).png" alt="">
+                  </div>
+              </div>
+          
+           </div>
+       </div>
+ </div>
+  
+
+    
+    
+</body>
+</html>
+
