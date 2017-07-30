@@ -1,0 +1,129 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#header{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+#header .logo{
+    width: 100%;
+    
+}
+#header .logo img{
+    width: 50%;
+        margin-top: -10px;
+}
+
+
+#header .logo span{
+        text-transform: capitalize;
+    color: red;
+    font-weight: 900;
+    font-size: 31px;
+    margin-left: -40px;
+}
+#header .logout_btn a{
+   color: white;
+    text-transform: capitalize;
+    background-color: 	rgb(255,69,0);
+    padding: 5px 13px;
+    border-radius: 6px; 
+    text-decoration: none;
+    margin-left: 50px
+}
+
+#header .logout_btn{
+    margin-top: 20px
+}
+/*header media*/
+@media(max-width:992px){
+    #header .logout_btn a{
+        margin-left: 0px;
+    }
+    #header .logo span{
+        font-size: 28px;
+        margin-left: -25px;
+    }
+    
+    #header .logout_btn{
+        margin: 12% 0%;
+    }
+}
+@media(max-width:767px){
+    #header .logout_btn a{
+        margin-left: -30px;
+    }
+}
+@media(max-width:576px){
+    #header .logo{
+        width: 50%;
+    }
+    #header .logout_btn{
+        width: 50%;
+    }
+}
+@media(max-width:550px){
+    #header .logo{
+        width: 60%;
+        margin-left: -20px;
+    
+}
+}
+    @media(max-width:420px){
+        #header .logo{
+            width: 75%;
+        }
+        #header .logout_btn{
+     margin: 18% 0%;
+    }
+        #header .logout_btn a{
+        margin-left: -20px;
+    }
+    }
+#content{
+    margin-top: 80px;
+}
+#content .coldes{
+   padding: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 1px solid black;
+}
+#content .red{
+    background-color: red;
+    
+}
+#content .time tr td{
+        padding: 10px 142.5px;
+    border: 1px solid black;
+}
+#container .hw_datepicker{
+
+    z-index: 10;
+    right: 10000px;
+     
+
+}
+#content .delivery-date{
+    text-align: center;
+    
+}
+#content .delivery-schedule{
+    text-align: center;
+}
+#content .time{
+    text-align: center;
+    width: 406px;;
+    margin-left: 66px;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#content .time li{
+    padding: 10px 40px;
+        border: 1px solid black;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="hw.datepicker-master/hw.datepicker.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="hw.datepicker-master/hw.datepicker.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/module.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/controller.js"></script>
+
+
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+<!--  <h1>hello</h1>-->
+   <div id="container">
+   <div id="header">
+      <div class="container-fluid">
+           <div class="row"> 
+                   <div class="  col-md-3 col-sm-4 col-9 ">
+                       <div class="logo">
+                           <img src="stylesheet/logo.png" alt="image" >
+                           <span>halanx</span>
+                           
+                       </div>
+                       
+                   </div>
+<!--
+                  
+-->
+                       <div class="col-md-2 offset-md-7 col-sm-2 offset-sm-6 col-3" >
+                           <div class="logout_btn">
+                               <a href="">logout</a>
+                           </div>
+                       </div>
+
+               </div>
+      </div>
+  </div>
+   <div id="content">
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-12">
+                   <div class="delivery-date">
+                    <h1>select a delivery date</h1>
+                     <input type="text" id="hw_datepicker" ng-model="date" />
+<button id="hw_datepicker_trigger" >pick</button>
+<!-- <button  id="get" ng-click="getdate()">get</button>-->
+              
+              </div>
+              
+               </div>
+           </div>
+           <div class="row">
+             <div class="col-sm-12">
+                <div class="delivery-schedule">
+                 <h1>desired delivery time</h1>
+                 <ul>
+                     <li ng-repeat="i in desired" class="coldes"  ng-class={"red":i.mark} ng-click="changeschedule(i)">
+                        {{i.service }}
+                     </li>
+                 </ul>
+<!--
+                 <table>
+                     <tr>
+                         <td ng-repeat="i in desired" class="coldes" ng-class={"red":i.mark} ng-click="changeschedule(i)">{{i.service}}</td>
+                         
+                     </tr>
+                 </table>
+-->
+               </div>
+               </div>
+            </div>
+          
+
+           <div class="row" >
+               <div class="col-sm-9 offset-sm-3">
+                   <div class="time" ng-hide="mytime">
+<!--
+                        <table>
+
+                    <tr ng-repeat="i in time" >
+                       <td ng-click="timeadded(i)" ng-class={"red":i.mark} >{{i.timing}}</td>
+                        
+                    </tr>
+                     </table>
+-->
+                     <ul>
+                         <li ng-repeat="i in time"  ng-click="timeadded(i)" ng-class={"red":i.mark} >{{i.timing}}</li>
+                     </ul>
+                   </div>
+                    <div class="button">
+                    <button  id="get" ng-click="postdata()">get</button>
+                     
+                 </div>
+
+               </div>
+           </div>
+
+           
+       </div>
+   </div>
+  
+ </div>
+  <script>
+//      $(".hw_datepicker hw_closed").bind({
+//          
+//    // The hidden field to receive the date
+//    altField: "#dateHidden",
+//    // The format you want
+//    altFormat: "yy-mm-dd",
+//    // The format the user actually sees
+//    dateFormat: "dd/mm/yy",
+//    onSelect: function (date) {
+//        alert("hello")
+//        // Your CSS changes, just in case you still need them
+//        $('a.ui-state-default').removeClass('ui-state-highlight');
+//        $(this).addClass('ui-state-highlight');
+//    }
+//});
+//  $(".hw_datepicker").bind("select",function(){
+//      alert("hello")
+//  })
+      
+//  $("#get").bind("click", function(){
+////    alert("The paragraph was clicked.");
+////      console.log($("#hw_datepicker").val())
+//     var date = $("#hw_datepicker").val()
+//     localStorage.setItem(date,date)
+//     console.log(date)
+//});
+      var minDate = new Date();
+minDate.setDate(minDate.getDate());
+var maxDate = new Date();
+maxDate.setDate(maxDate.getDate()+4);
+
+var selectedDate = new Date();
+selectedDate.setDate(selectedDate.getDate() - 60);
+ var datePicker = new DatePicker({
+    input: $('#hw_datepicker'),
+    trigger: $('#hw_datepicker_trigger'),
+      
+    container: $('#hw_datepicker').parent(),
+    dateFormat: 'yyyy/mm/dd',
+     minDate: minDate,
+    maxDate: maxDate,
+//     https://hevyweb.github.io/hw.datepicker/
+     
+});
+
+datePicker.init();
+    </script>
+</body>
+</html>
