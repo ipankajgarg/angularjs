@@ -1,4 +1,4 @@
-app.controller("myctrl",($scope,myfactory,$base64)=>{
+app.controller("myctrl",($scope,myfactory)=>{
     $scope.hide = true;
   $scope.postdata= ()=>{            
 var obj={}

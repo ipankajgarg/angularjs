@@ -1,4 +1,4 @@
-var app = angular.module("myapp",['base64']);
+var app = angular.module("myapp",[]);
 //app.directive('fileInput', ['$parse', function ($parse) {
 //    return {
 //        restrict: 'A',
