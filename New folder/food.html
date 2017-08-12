@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+     
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+ <link rel="stylesheet" href="assets/css/style.css">
+ <script src="libs/angular.min.js"></script>
+ <script src="js/module.js"></script>
+ <script src="js/factory.js"></script>
+ <script src="foodjs/controller.js"></script>
+
+</head>
+
+
+<body ng-app="myapp" ng-controller="myctrl">
+<!--
+<div>
+    <ul>
+        <li ng-repeat="store in storedata" ng-click="getid(store)">
+           <a ng-href="#/product"> {{store.StoreName}}</a>
+        </li>
+    <div>
+        <ng-view></ng-view>
+    </div>
+</div>
+-->
+
+
+  <div id="container">
+  <div id="header">
+      <div class="container-fluid">
+           <div class="row"> 
+                   <div class="  col-md-3 col-sm-4 col-9 ">
+                       <div class="logo">
+                           <img src="images/logo.png" alt="image" >
+                           <span>halanx</span>
+                           
+                       </div>
+                       
+                   </div>
+<!--
+                  
+-->
+                       <div class="col-md-2 offset-md-7 col-sm-2 offset-sm-6 col-3" >
+                           <div class="logout_btn">
+                               <a href="">logout</a>
+                           </div>
+                       </div>
+
+               </div>
+      </div>
+  </div>
+ <div id="content">
+           <div class="container-fluid" style="background-color: #f7f7f7;">
+               <div class="row">
+                   <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+                       <div class="nav-button">
+                           <span ng-click="addsidebar()" class="sidebutton">
+                               <i class="fa fa-bars" aria-hidden="true"></i>
+                         </span>
+                       </div>
+                       <div class="userlist" ng-class={"move":movex}>
+                        <ul>
+                            <li><a href="">my accounts</a></li>
+                            <li><a href="">payments</a></li>
+                            <li><a href="internalpages-master/myorders.html">my orders</a></li>
+                            <li><a href="favourites/fav.html">favourites</a></li>
+                            <li><a href="">points</a></li>
+                            <li><a href="internalpages-master/notifications.html">notification</a></li>
+                            <li><a href="">express</a></li>
+                        </ul>
+                       </div>
+                   </div>
+                   <div class="col-lg-5 col-sm-6 col-9">
+                       <div class="delivery-option">
+                           <ul>
+                              <li><a href="#">delivery location-</a></li>
+                              <li><a href="" ng-click="addstore()">shopping in-</a>
+                                <div class="storelist" ng-class={"show":showclass}>
+                                  <ul>
+                                  <li ng-repeat="store in storedata" ng-click="mystore(store.id)">
+                                      <a href="">{{store.StoreName}}</a>
+                                  </li>
+<
+                                      
+                                  </ul>
+
+                              </div>
+                              </li>
+                              <li><a href="">for-</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class=" col-sm-2 offset-lg-2 offset-md-1 col-3" >
+                       <div class="cart-icon">
+                          <a href="cart.html">
+                           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<span ng-model = "counter">{{counter}}</span>
+                           </a>
+                           
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-sm-12">
+                       <div class="datalist">
+   <div class="datalogo">
+    <img ng-src="{{StoreLogo}}" alt="">
+    
+    
+</div>
+<div class="datasection">
+<span>{{StoreName}}</span>
+    <div class="productmain">
+        <ul>
+            <li ng-repeat="data in mydata track by $index" data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+           
+             <div class="product" >   
+<!--
+             <div class="productimage" >
+             <img ng-src="{{data.ProductImage}}"> 
+
+              </div>
+-->
+              <div class="productdescription">
+                  <span class="productname">{{data.ProductName}}</span>
+                  
+                  <br>
+                  <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span>
+                   <img src="images/Like-48%20(1).png"  ng-click="addfav(data)"   ng-class={"red":data.FavoriteField} alt="image" style="width:10%;">
+                                  <input type="number" placeholder="quantity" ng-model="quantity" ng-init="quantity=1" min="1" >
+
+
+                  <br>
+                  <button ng-click="addtocart(data)">add to cart</button>
+              </div>
+              
+              </div>
+                            
+               
+            </li>
+        </ul>
+
+    </div>
+</div>
+</div>
+                   </div>
+               </div>
+               
+               
+               
+</div>
+       </div>
+  </div>
+   
+    
+</body>
+</html>
